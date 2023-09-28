@@ -8,31 +8,31 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "72x72"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "96x96"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg","sizes": "128x128"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "144x144"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "152x152"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "192x192"
       },
       {
-        "src": "/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "384x384"
       },
       {

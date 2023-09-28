@@ -8,35 +8,35 @@
     "orientation": "portrait-primary",
     "icons": [
       {
-        "src": "/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "72x72"
       },
       {
-        "src": "/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "96x96"
       },
       {
-        "src": "/i/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg","sizes": "128x128"
       },
       {
-        "src": "/i/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "144x144"
       },
       {
-        "src": "/i/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "152x152"
       },
       {
-        "src": "/i/static/images/chat-left-dots.svg",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "192x192"
       },
       {
-        "src": "/images/icons/icon-384x384.png",
+        "src": "/chat-left-dots.svg",
         "type": "image/svg", "sizes": "384x384"
       },
       {
-        "src": "/i/static/images/chat-left-dots.svg",
+        "src": "chat-left-dots.svg",
         "type": "image/svg", "sizes": "512x512"
       }
     ]

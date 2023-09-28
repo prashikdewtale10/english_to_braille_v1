@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Braille Chat</title>
+  <link rel="icon" type="image/x-icon" href="static/images/chat-left-dots.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- GOOGLE POPPINS FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+            class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+            <path
+              d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+            <path
+              d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg>
+          Braille Chat
+        </a>
+        <div class="d-flex" role="search">
+          <div class="nav-item dropdown">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-three-dots" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" id="btnSwitch">Theme</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- CONTENT -->
+    <div class="card text-center mt-3">
+      <div class="card-header d-flex justify-content-between">
+        Featured
+        <div class="d-inline">Modes
+          <div class="nav-item dropdown d-inline-block">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-three-dots" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end ">
+              <li><button class="dropdown-item" onclick="changeTranslationMode('B-E')">Braille to English</button></li>
+              <li><button class="dropdown-item" onclick="changeTranslationMode('E-B')">English to Braille</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title mb-4" id="translation_mode_header">Braille to English Translation</h5>
+        <div class="d-flex justify-content-between">
+          <p class="card-text text-left">Type or paste your message.</p>
+          <p><button class="btn btn-primary btn-sm" id="translate_btn" onclick="convert()" disabled><i class="bi bi-translate"></i> Translate</button>
+          </p>
+        </div>
+        <div>
+          <div class="col">
+            <div class="mb-3">
+              <!-- <label for="exampleFormControlTextarea1" class="form-label">Your message</label> -->
+              <textarea class="form-control" rows="8" id="input_box" oninput="changeState()"></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="card-text text-left">Your braille message.</p>
+              <p><button class="btn btn-primary btn-sm" id="copy_btn" onclick="copy_output()" disabled>
+                <i class="bi bi-clipboard"></i>
+                Copy message</button>
+              </p>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="exampleFormControlTextarea1" class="form-label">Your message</label> -->
+              <textarea class="form-control" rows="8" id="output_box"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+      <div class="card-footer text-body-secondary">
+        <i class="bi bi-c-circle"></i> 
+        Prashik Dewtale
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    // Characters Mapping object
+    var map = {
+      'a': '&#10241;',
+      'b': '&#10243;',
+      'c': '&#10249;',
+      'd': '&#10265;',
+      'e': '&#10257;',
+      'f': '&#10251;',
+      'g': '&#10267;',
+      'h': '&#10259;',
+      'i': '&#10250;',
+      'j': '&#10266;',
+      'k': '&#10245;',
+      'l': '&#10247;',
+      'm': '&#10281;',
+      'n': '&#10269;',
+      'o': '&#10261;',
+      'p': '&#10255;',
+      'q': '&#10271;',
+      'r': '&#10263;',
+      's': '&#10254;',
+      't': '&#10270;',
+      'u': '&#10277;',
+      'v': '&#10300;',
+      'w': '	&#10298;',
+      'x': '&#10285;',
+      'y': '&#10301;',
+      'z': '&#10293;',
+      ' ': '&emsp;'
+    };
+    
+    // Implemtation for toggling in light and dark themes mode
+    document.getElementById('btnSwitch').addEventListener('click', () => {
+      if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', 'light')
+      }
+      else {
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+      }
+    })
+    
+    function changeTranslationMode(mode) {
+      if (mode == 'B-E') {
+        document.getElementById('translation_mode_header').innerText = "Braille to English Translation"
+      } else if (mode == 'E-B') {
+        document.getElementById('translation_mode_header').innerText = "English to Braille Translation"
+      }
+
+    }
+    
+    function changeState() {
+      var input_value = document.getElementById("input_box");
+      input_value = input_value.value.toLowerCase();
+      if (input_value != '') {
+        document.getElementById("translate_btn").removeAttribute("disabled")
+      } else {
+        document.getElementById("translate_btn").setAttribute("disabled", true)
+        document.getElementById("copy_btn").setAttribute("disabled", true)
+        document.getElementById("output_box").innerHTML = ""
+        document.getElementById("output_box").setAttribute("disabled", true);
+        document.getElementById("copy_btn").innerHTML ='<i class="bi bi-clipboard"></i> Copy message'
+      }
+
+    }
+
+    function convert() {
+      var input_value = document.getElementById("input_box");
+      var output_value = document.getElementById("output_box");
+      input_value = input_value.value.toLowerCase();
+      for (var i = 0; i < input_value.length; i++) {
+
+        //  Store character in variable
+        var letter = input_value.charAt(i);
+
+        //  Check character is letter (between a - z) or space
+        if (letter.match(/[a-z\s]/i)) {
+
+          //  Match letter to Braille Symbol
+          var symbol = map[letter];
+
+          //  Add Braille symbol to output element
+          output_value.innerHTML += symbol;
+
+        }//   End if
+
+      }
+      document.getElementById("copy_btn").removeAttribute("disabled")
+    }
+    
+    function copy_output(){
+        // Get the text field
+  var copyText = document.getElementById("output_box");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  document.getElementById("copy_btn").innerHTML ='<i class="bi bi-clipboard-check"></i>  Copied message'
+    }
+  </script>
+</body>
+
+</html>

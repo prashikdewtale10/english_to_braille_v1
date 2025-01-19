@@ -1,0 +1,13 @@
+{
+    "title" : "Braille Chat",
+    "select_language": "Select Language",
+    "translate": "Translate",
+    "copy_message": "Copy message",
+    "download_braille": "Download Braille",
+    "type_message": "Type or paste your message.",
+    "braille_message": "Your Braille message.",
+    "braille_to_english": "Braille to English Translation",
+    "english_to_braille": "English to Braille Translation",
+    "download_btn": "Download Braille",
+    "theme": "Theme"
+}

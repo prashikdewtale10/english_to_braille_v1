@@ -1,0 +1,13 @@
+{
+    "title": "ब्रेल चॅट",
+    "select_language": "भाषा निवडा",
+    "translate": "भाषांतर",
+    "copy_message": "संदेश कॉपी करा",
+    "download_braille": "ब्रेल डाउनलोड करा",
+    "type_message": "तुमचा संदेश टाइप करा किंवा पेस्ट करा.",
+    "braille_message": "तुमचा ब्रेल संदेश.",
+    "braille_to_english": "ब्रेल ते इंग्रजी भाषांतर",
+    "english_to_braille": "इंग्रजी ते ब्रेल भाषांतर",
+    "download_btn": "ब्रेल डाउनलोड करा",
+    "theme": "थीम"
+}
